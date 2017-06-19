@@ -21,6 +21,7 @@
 <string name="bell">提醒</string>
     <string name="tech">衛教</string>
     <string name="test">我是測試</string>
+    <string name="test2">我是測試2</string>
 <!-- Strings related to login -->
 <string name="prompt_email">Email</string>
 <string name="prompt_password">Password (optional)</string>
