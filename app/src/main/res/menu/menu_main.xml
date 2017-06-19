@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="health.binodata.health_app_test.MainActivity">
+
+
+    <item
+        android:id="@+id/account_info"
+        android:orderInCategory="100"
+        android:title="@string/account_info"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/change_pwd"
+        android:orderInCategory="100"
+        android:title="@string/change_pwd"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="100"
+        android:title="@string/logout"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/bell"
+        android:title="@string/bell"
+        android:icon="@drawable/bb"
+        app:showAsAction="always" ></item>
+
+    <item android:id="@+id/tech"
+        android:title="@string/tech"
+        android:icon="@drawable/tech"
+        app:showAsAction="always" ></item>
+</menu>
