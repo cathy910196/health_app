@@ -6,7 +6,7 @@
     <item
         android:id="@+id/test_setting"
         android:orderInCategory="100"
-        android:title="@string/logout"
+        android:title="各種測試"
         app:showAsAction="ifRoom" />
 
     <item
