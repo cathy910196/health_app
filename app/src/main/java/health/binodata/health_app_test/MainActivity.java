@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
-    CharSequence Titles[]={"個人資訊","生理量測","飲食記錄","運動紀錄","衛教宣導"};
+    CharSequence Titles[]={"個人資訊","生理量測","飲食記錄","運動紀錄","測試頁"};
     int Numboftabs =5;
     Handler mHandler;
 
