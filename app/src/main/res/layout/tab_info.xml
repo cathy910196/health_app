@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="王大明"
-        android:id="@+id/textView2"
-        android:textSize="@dimen/title_size"
-        android:textColor="@color/black"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/textView"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"/>
-
-    <TextView
+    <!---TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="近期血壓"
-        android:id="@+id/textView28"
-        android:layout_below="@+id/chart1"
-        android:layout_centerHorizontal="true" />
+        android:text="衛教宣導"
+        android:id="@+id/textView27"
+        android:layout_gravity="center_horizontal" /-->
 
-</RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
