@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
         switch(item.getItemId()) {
 
-            case R.id.test_setting:
+           /* case R.id.test_setting:
                 Intent intent7 = new Intent(this, setting.class);
                 startActivity(intent7);
                 return true;
-
+*/
             case R.id.account_info:
                 Intent intent = new Intent(this, account_info.class);
                 startActivity(intent);
