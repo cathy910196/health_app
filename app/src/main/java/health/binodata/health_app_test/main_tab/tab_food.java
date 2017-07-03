@@ -52,7 +52,7 @@ public class tab_food extends Fragment {
                         tv_time.setText("時間-" + hours + ":" + minutes);
                     }
                 }, 1, 1, true);
-                timePickerDialog.setTitle("請選擇時間");
+                timePickerDialog.setTitle("請選擇時間:");
                 timePickerDialog.show();
             }
         });
