@@ -40,6 +40,10 @@
                     android:layout_column="4"
                     />
 
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
                 <TextView
                     android:layout_column="3"
                     android:layout_width="wrap_content"
@@ -47,28 +51,59 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="時間"
                     android:id="@+id/textView11"/>
-                <TimePicker
-                    android:layout_column="4"
+
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/timePicker2"/>
-
-
+                    android:text="選擇時間"
+                    android:id="@+id/timeButton"
+                    android:onClick="setTime" />
 
                 <TextView
-                    android:layout_column="3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="照片拍攝"
-                    android:id="@+id/textView9" />
+                    android:text=""
+                    android:id="@+id/tv_time"
+                    android:layout_column="5" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                        android:layout_column="3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="照片拍攝"
+                        android:id="@+id/textView9" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="開啟相機"
+                    android:id="@+id/button_c"
+                    android:layout_column="4" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="開啟相簿"
+                    android:id="@+id/button_p"
+                    android:layout_column="6" />
+            </TableRow>
+
+
                 <ImageView
-                    android:layout_column="4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageView" />
+                        android:layout_column="4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_picture" />
 
-                <TextView
+
+            <TextView
                     android:layout_column="3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

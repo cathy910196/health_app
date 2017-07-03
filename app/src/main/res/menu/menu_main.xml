@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="health.binodata.health_app_test.MainActivity">
 
-    <item
+    <!--item
         android:id="@+id/test_setting"
         android:orderInCategory="100"
         android:title="各種測試"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom" /-->
 
     <item
         android:id="@+id/account_info"

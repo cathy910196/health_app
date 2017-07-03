@@ -16,20 +16,13 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
-        <Switch
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="輸入方式"
-            android:id="@+id/switch1"
-            android:layout_marginTop="30dp"
-            android:checked="false"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/textView3"
+            android:text="裝置掃描"
+            android:id="@+id/button6"
             android:layout_row="0"
-            android:layout_column="14"
-            android:textOn="手動輸入"
-            android:textOff="裝置輸入"
-            />
+            android:layout_column="14" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -91,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="選擇時間"
-                android:id="@+id/dateButton"
+                android:id="@+id/timeButton"
                 android:onClick="setTime"
                 />
 

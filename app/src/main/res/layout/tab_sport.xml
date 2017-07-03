@@ -27,12 +27,26 @@
                 android:layout_row="0"
                 android:layout_column="0" />
 
-            <TimePicker
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/timePicker3"
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_row="0"
-                android:layout_column="1" />
+                android:layout_column="1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="選擇時間"
+                    android:id="@+id/timeButton1"
+                    android:onClick="setTime"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/tv_time1"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -43,12 +57,25 @@
                 android:layout_row="1"
                 android:layout_column="0" />
 
-            <TimePicker
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/timePicker4"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_row="1"
-                android:layout_column="1" />
+                android:layout_column="1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="選擇時間"
+                    android:id="@+id/timeButton2"
+                    android:onClick="setTime"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/tv_time2"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"

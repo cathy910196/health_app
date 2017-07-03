@@ -29,37 +29,34 @@ import health.binodata.health_app_test.R;
 public class tab_measure extends Fragment {
     Spinner sp_type;
     Spinner sp_status;
-    Button button_date;
+    Button button_time;
     TextView tv_time;
-    TimePickerDialog tpd;
-
-    Handler mHandler ;
-    int mHour;
-    int mMinute;
+    TimePickerDialog timePickerDialog;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =inflater.inflate(R.layout.tab_measure,container,false);
-        button_date=(Button)v.findViewById(R.id.dateButton);
+        button_time=(Button)v.findViewById(R.id.timeButton);
         tv_time=(TextView)v.findViewById(R.id.tv_time);
 
         final FragmentActivity c = getActivity();
 
-
-        button_date.setOnClickListener(new View.OnClickListener() {
-
+        button_time.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View view) {
+                //這邊就是呼叫 TimePickerDialog 的程式碼
+                timePickerDialog = new TimePickerDialog(c, new TimePickerDialog.OnTimeSetListener() {
 
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int hours, int minutes) {
+                        tv_time.setText("時間-" + hours + ":" + minutes);
+                    }
+                }, 1, 1, true);
+                timePickerDialog.setTitle("請選擇時間");
+                timePickerDialog.show();
             }
         });
-        //時間選擇器
-       /* tpd=new TimePickerDialog(c, new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-                tv_time.setText((hourOfDay>12?hourOfDay-12:hourOfDay)
-                +" : "+minute+" "+(hourOfDay>12?" PM ":" AM "));
-            }
-        },calendar.get(Calendar.HOUR_OF_DAY),calendar.get(calendar.MINUTE),false);*/
+
+
 
 
         //狀態的下拉選單
