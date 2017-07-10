@@ -34,7 +34,8 @@
             android:text="王大明"
             android:id="@+id/textView22"
             android:layout_row="1"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:gravity="center_horizontal"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,7 +52,7 @@
             android:id="@+id/imageView2"
             android:layout_row="0"
             android:layout_column="1"
-            android:src="@drawable/test_image"
+            android:src="@drawable/lucifer_1"
             />
 
         <TextView
@@ -61,7 +62,8 @@
             android:text="1975/05/07"
             android:id="@+id/textView23"
             android:layout_row="2"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:gravity="center_horizontal"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,7 +81,8 @@
             android:text="A型"
             android:id="@+id/textView24"
             android:layout_row="3"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:gravity="center_horizontal"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,6 +100,7 @@
             android:text="糖尿病"
             android:id="@+id/textView25"
             android:layout_row="4"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:gravity="center_horizontal"/>
     </GridLayout>
 </RelativeLayout>
