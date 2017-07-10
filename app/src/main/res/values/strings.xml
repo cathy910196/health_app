@@ -1,47 +1,47 @@
 <resources>
-<string name="app_name">健康照護app</string>
-<string name="action_settings">Settings</string>
+    <string name="app_name">健康照護app</string>
+    <string name="action_settings">Settings</string>
 
 
-<string name="tv_main">首頁資訊</string>
-<string name="health_care">健康照護</string>
-<string name="setting">設定</string>
-<string name="message">推播訊息</string>
-<string name="consultation">照護諮詢</string>
-<string name="diet_record">飲食紀錄</string>
-<string name="sport_record">運動紀錄</string>
-<string name="physiological_measurement">生理量測</string>
-<string name="history">歷史資料</string>
-<string name="modify_member_information">修改會員資料</string>
-<string name="change_password">更改密碼</string>
-<string name="sign_out">登出</string>
-<string name="title_activity_setting">設定</string>
-<string name="back">回前頁</string>
-<string name="title_activity_login">健康照護APP</string>
-<string name="bell">提醒</string>
+    <string name="tv_main">首頁資訊</string>
+    <string name="health_care">健康照護</string>
+    <string name="setting">設定</string>
+    <string name="message">推播訊息</string>
+    <string name="consultation">照護諮詢</string>
+    <string name="diet_record">飲食紀錄</string>
+    <string name="sport_record">運動紀錄</string>
+    <string name="physiological_measurement">生理量測</string>
+    <string name="history">歷史資料</string>
+    <string name="modify_member_information">修改會員資料</string>
+    <string name="change_password">更改密碼</string>
+    <string name="sign_out">登出</string>
+    <string name="title_activity_setting">設定</string>
+    <string name="back">回前頁</string>
+    <string name="title_activity_login">健康照護APP</string>
+    <string name="bell">提醒</string>
     <string name="tech">衛教</string>
     <string name="test">我是測試</string>
     <string name="test2">我是測試2</string>
-<!-- Strings related to login -->
-<string name="prompt_email">Email</string>
-<string name="prompt_password">Password (optional)</string>
-<string name="action_sign_in">Sign in or register</string>
-<string name="action_sign_in_short">Sign in</string>
-<string name="error_invalid_email">This email address is invalid</string>
-<string name="error_invalid_password">This password is too short</string>
-<string name="error_incorrect_password">This password is incorrect</string>
-<string name="error_field_required">This field is required</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-<string name="title_activity_account_info">account_info</string>
-<string name="title_activity_chang_pwd">chang_pwd</string>
-<string name="title_activity_change_pwd">change_pwd</string>
-<string name="title_activity_care_talk">care_talk</string>
-<string name="account_info">帳戶資訊</string>
-<string name="care_talk">照護諮詢</string>
-<string name="change_pwd">更改密碼</string>
-<string name="logout">登出</string>
+    <string name="title_activity_account_info">account_info</string>
+    <string name="title_activity_chang_pwd">chang_pwd</string>
+    <string name="title_activity_change_pwd">change_pwd</string>
+    <string name="title_activity_care_talk">care_talk</string>
+    <string name="account_info">帳戶資訊</string>
+    <string name="care_talk">照護諮詢</string>
+    <string name="change_pwd">更改密碼</string>
+    <string name="logout">登出</string>
     <string name="text_tech">
         血壓是什麼 \n
 心臟有收縮及放鬆期。心臟收縮時，左心室將血液打出到主動脈，動脈血管壁承
@@ -104,40 +104,41 @@
     </string>
 
 
-<string-array name="sport">
-    <item>慢跑</item>
-    <item>健走</item>
-    <item>游泳</item>
-    <item>體操</item>
-    <item>登山</item>
-</string-array>
+    <string-array name="sport">
+        <item>慢跑</item>
+        <item>健走</item>
+        <item>游泳</item>
+        <item>體操</item>
+        <item>登山</item>
+    </string-array>
 
-<string-array name="measure_type">
-    <item>血壓</item>
-    <item>血糖</item>
-    <item>心跳</item>
-    <item>體重</item>
-</string-array>
+    <string-array name="measure_type">
+        <item>血壓</item>
+        <item>血糖</item>
+        <item>心跳</item>
+        <item>體重</item>
+    </string-array>
 
-<string-array name="measure_status">
+    <string-array name="measure_status">
         <item>早餐前</item>
         <item>早餐後</item>
         <item>午餐前</item>
         <item>午餐後</item>
         <item>晚餐前</item>
         <item>晚餐後</item>
-</string-array>
+    </string-array>
 
-<string-array name="meal">
-    <item>早餐前</item>
-    <item>早餐後</item>
-    <item>午餐前</item>
-    <item>午餐後</item>
-    <item>晚餐前</item>
-    <item>晚餐後</item>
-</string-array>
-<string name="title_activity_teach">TeachActivity</string>
-<string name="section_format">Hello World from section: %1$d</string>
+    <string-array name="meal">
+        <item>早餐前</item>
+        <item>早餐後</item>
+        <item>午餐前</item>
+        <item>午餐後</item>
+        <item>晚餐前</item>
+        <item>晚餐後</item>
+    </string-array>
+    <string name="title_activity_teach">TeachActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
-<string name="teacher">教育</string>
+    <string name="teacher">教育</string>
+    <string name="title_activity_singup">SingupActivity</string>
 </resources>

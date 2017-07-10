@@ -17,6 +17,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -114,6 +117,45 @@ public class LoginActivity extends AppCompatActivity {
                                         .show();
                             }
                         });
+    }
+
+    private void addContact(){
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = db.getReference("users");
+        usersRef.child(userUID).child("phone").setValue("55667788");
+        usersRef.child(userUID).child("nickname").setValue("Hank");
+    }
+
+    private void updateContact(){
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = db.getReference("users");
+        Map<String, Object> data = new HashMap<>();
+        data.put("nickname", "Hank123");
+        usersRef.child(userUID).updateChildren(data,
+                new DatabaseReference.CompletionListener() {
+                    @Override
+                    public void onComplete(DatabaseError databaseError,
+                                           DatabaseReference databaseReference) {
+                        if (databaseError!=null){
+                            //正確完成
+                        }else{
+                            //發生錯誤
+                        }
+                    }
+                });
+    }
+
+    private void pushFriend(String name){
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = db.getReference("users");
+        DatabaseReference friendsRef =
+                usersRef.child(userUID).child("friends").push();
+        Map<String, Object> friend = new HashMap<>();
+        friend.put("name", name);
+        friend.put("phone", "22334455");
+        friendsRef.setValue(friend);
+        String friendId = friendsRef.getKey();
+        Log.d("FRIEND", friendId+"");
     }
 
 }
