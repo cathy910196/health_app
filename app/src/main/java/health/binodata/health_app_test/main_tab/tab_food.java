@@ -1,11 +1,23 @@
 package health.binodata.health_app_test.main_tab;
 
 import android.app.TimePickerDialog;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageInstaller;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.icu.text.SimpleDateFormat;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +27,10 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Random;
 
 import health.binodata.health_app_test.R;
 
@@ -56,6 +72,31 @@ public class tab_food extends Fragment {
                 timePickerDialog.show();
             }
         });
+        //相機
+        button_p.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(intent, PHOTO);
+            }
+        });
+
+        //相簿
+        button_c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ContentValues value = new ContentValues();
+                value.put(MediaStore.Audio.Media.MIME_TYPE, "image/jpeg");
+                // Uri uri= getContentResolver().insert(Media.EXTERNAL_CONTENT_URI,
+                //value);
+                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, Environment.getDataDirectory().getAbsolutePath());
+                startActivityForResult(intent, CAMERA);
+
+            }
+        });
         //早餐午餐晚餐
         sp_meal=(Spinner)v.findViewById(R.id.spinner_meal);
         ArrayAdapter<CharSequence> lunchList_meal = ArrayAdapter.createFromResource(this.getActivity(),
@@ -66,4 +107,6 @@ public class tab_food extends Fragment {
 
         return v;
     }
+
+
 }
