@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,11 +29,13 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseAuth.AuthStateListener authListener;
     private String userUID;
+    Button bt_signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        bt_signup=(Button) findViewById(R.id.button7);
         auth = FirebaseAuth.getInstance();
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -43,14 +46,21 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("onAuthStateChanged", "登入:"+
                             user.getUid());
                     userUID =  user.getUid();
-//                    addContact();
-//                    updateContact();
-//                    pushFriend("Jack");
+
                 }else{
                     Log.d("onAuthStateChanged", "已登出");
                 }
             }
         };
+        bt_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.setClass(LoginActivity.this,SingupActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     @Override
@@ -83,27 +93,23 @@ public class LoginActivity extends AppCompatActivity {
                             register(email, password);
                         }else{
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
                             startActivity(intent);
                         }
                     }
                 });
     }
 
-    private void register(final String email, final String password) {
+   private void register(final String email, final String password) {
         new AlertDialog.Builder(LoginActivity.this)
                 .setTitle("登入問題")
-                .setMessage("無此帳號，是否要以此帳號與密碼註冊?")
-                .setPositiveButton("註冊", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        createUser(email, password);
-                    }
-                })
+                .setMessage("帳號密碼錯誤")
+
                 .setNeutralButton("取消", null)
                 .show();
     }
 
-    private void createUser(String email, String password) {
+    /*private void createUser(String email, String password) {
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
                         new OnCompleteListener<AuthResult>() {
@@ -118,44 +124,5 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         });
     }
-
-    private void addContact(){
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference usersRef = db.getReference("users");
-        usersRef.child(userUID).child("phone").setValue("55667788");
-        usersRef.child(userUID).child("nickname").setValue("Hank");
-    }
-
-    private void updateContact(){
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference usersRef = db.getReference("users");
-        Map<String, Object> data = new HashMap<>();
-        data.put("nickname", "Hank123");
-        usersRef.child(userUID).updateChildren(data,
-                new DatabaseReference.CompletionListener() {
-                    @Override
-                    public void onComplete(DatabaseError databaseError,
-                                           DatabaseReference databaseReference) {
-                        if (databaseError!=null){
-                            //正確完成
-                        }else{
-                            //發生錯誤
-                        }
-                    }
-                });
-    }
-
-    private void pushFriend(String name){
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference usersRef = db.getReference("users");
-        DatabaseReference friendsRef =
-                usersRef.child(userUID).child("friends").push();
-        Map<String, Object> friend = new HashMap<>();
-        friend.put("name", name);
-        friend.put("phone", "22334455");
-        friendsRef.setValue(friend);
-        String friendId = friendsRef.getKey();
-        Log.d("FRIEND", friendId+"");
-    }
-
+*/
 }

@@ -140,5 +140,5 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="teacher">教育</string>
-    <string name="title_activity_singup">SingupActivity</string>
+    <string name="title_activity_singup">註冊</string>
 </resources>
