@@ -1,7 +1,9 @@
 package health.binodata.health_app_test;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -37,6 +39,7 @@ public class SingupActivity extends AppCompatActivity {
         //返回建
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         listen();
+
     }
     protected void setdata(){
         ed_name=(EditText)findViewById(R.id.editText10);
@@ -64,18 +67,19 @@ public class SingupActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (!task.isSuccessful()){
 
-                                    register(email, password);
+                                    createUserasynctask(email, password);
                                 }
                             }
                         });
             }
         });
     }
-    private void register(final String email, final String password) {
-        createUser(email,password);
-    }
+   /* private void register(String email,  String password) {
 
-    private void createUser(String email, String password) {
+        createUser(email,password);
+    }*/
+
+   /* private void createUser(String email, String password) {
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
                         new OnCompleteListener<AuthResult>() {
@@ -90,6 +94,58 @@ public class SingupActivity extends AppCompatActivity {
                                 startActivity(i);
                             }
                         });
+    }*/
+
+
+    //非同步執行序，跑條用的
+    private void createUserasynctask(final String email, final String password) {
+        final ProgressDialog progressDialog=new ProgressDialog(this);
+        new AsyncTask<Void, Integer, Boolean>(){
+            @Override
+            protected void onPreExecute()
+            {
+                super.onPreExecute();
+                progressDialog.setMessage("轉呀轉呀七彩霓虹燈~");
+                progressDialog.show();
+            }
+
+            @Override
+            protected Boolean doInBackground(Void... voids){
+                final Boolean[] success = {false};
+                auth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(
+                                new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        success[0] =true;
+
+                                    }
+                                });
+                return success[0];
+            }
+
+            @Override
+            protected void onProgressUpdate(Integer... values)
+            {
+                super.onProgressUpdate(values);
+            }
+
+            @Override
+            protected void onPostExecute(Boolean result)
+            {
+                super.onPostExecute(result);
+
+                progressDialog.dismiss();
+
+                Toast toast = Toast.makeText(SingupActivity.this,
+                        "註冊成功!!", Toast.LENGTH_LONG);
+                toast.show();
+                Intent i = new Intent();
+                i.setClass(SingupActivity.this,LoginActivity.class);
+                startActivity(i);
+            }
+        }.execute();
+
     }
 
 }
